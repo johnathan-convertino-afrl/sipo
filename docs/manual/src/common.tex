@@ -1,0 +1,148 @@
+\begin{titlepage}
+  \begin{center}
+
+  {\Huge SIPO}
+
+  \vspace{25mm}
+
+  \includegraphics[width=0.90\textwidth,height=\textheight,keepaspectratio]{img/AFRL.png}
+
+  \vspace{25mm}
+
+  \today
+
+  \vspace{15mm}
+
+  {\Large Jay Convertino}
+
+  \end{center}
+\end{titlepage}
+
+\tableofcontents
+
+\newpage
+
+\section{Usage}
+
+\subsection{Introduction}
+
+\par
+This core converts the serial data to parallel data. This is useful for SPI and other serial data protocols. All data actions
+in the core are done on a rising edge clock. The enable is used to change the rate based upon the input clock.
+
+\subsection{Dependencies}
+
+\par
+The following are the dependencies of the cores.
+
+\begin{itemize}
+  \item fusesoc 2.X
+  \item iverilog (simulation)
+  \item cocotb (simulation)
+\end{itemize}
+
+\input{src/fusesoc/depend_fusesoc_info.tex}
+
+\subsection{In a Project}
+\par
+This core is made to interface for serial to parallel data. On each enable pulse on a positive clock edge the input serial
+line will be sampled. The counter starts at 0 and the shift is complete once it hits BUS\_WIDTH * 8. For a 32 bit word you will
+need 32 enable pulses. These will correspond to counter output 0 to 31. 32 will signal the shift is done and the parallel output
+data is valid. Once it is valid data can be read and load asserted. Load will reset the core and clear it for the next shift operation.
+\begin{enumerate}
+  \item Set ena to 1 at rising clock edge for one clock cycle
+  \item Continue till the counter hits the number of bits needed.
+  \item Read the parallel data output to capture data.
+  \item Assert load to 1 to restart counter and clear parallel register.
+\end{enumerate}
+
+\begin{lstlisting}[language=Verilog]
+\end{lstlisting}
+
+\section{Architecture}
+\par
+The only module is the sipo module. It is listed below.
+
+\begin{itemize}
+  \item \textbf{sipo} Convert serial data to parallel by shifting in data on each enable pulse on a rising clock. (see core for documentation).
+\end{itemize}
+
+Please see \ref{Module Documentation} for more information.
+
+\section{Building}
+
+\par
+The SIPO core is written in Verilog 2001. They should synthesize in any modern FPGA software. The core comes as a fusesoc packaged core and can be
+included in any other core. Be sure to make sure you have meet the dependencies listed in the previous section.
+
+\subsection{fusesoc}
+\par
+Fusesoc is a system for building FPGA software without relying on the internal project management of the tool. Avoiding vendor lock in to Vivado or Quartus.
+These cores, when included in a project, can be easily integrated and targets created based upon the end developer needs. The core by itself is not a part of
+a system and should be integrated into a fusesoc based system. Simulations are setup to use fusesoc and are a part of its targets.
+
+\subsection{Source Files}
+
+\input{src/fusesoc/files_fusesoc_info.tex}
+
+\subsection{Targets}
+
+\input{src/fusesoc/targets_fusesoc_info.tex}
+
+\subsection{Directory Guide}
+
+\par
+Below highlights important folders from the root of the directory.
+
+\begin{enumerate}
+  \item \textbf{docs} Contains all documentation related to this project.
+    \begin{itemize}
+      \item \textbf{manual} Contains user manual and github page that are generated from the latex sources.
+    \end{itemize}
+  \item \textbf{src} Contains source files for the core
+  \item \textbf{tb} Contains test bench files for iverilog and cocotb
+    \begin{itemize}
+      \item \textbf{cocotb} testbench files
+    \end{itemize}
+\end{enumerate}
+
+\newpage
+
+\section{Simulation}
+\par
+There are a few different simulations that can be run for this core.
+
+\subsection{iverilog}
+\par
+iverilog is used for simple test benches for quick verification, visually, of the core.
+
+\subsection{cocotb}
+\par
+To use the cocotb tests you must install the following python libraries.
+\begin{lstlisting}[language=bash]
+  $ pip install cocotb
+\end{lstlisting}
+
+\begin{itemize}
+  \item \textbf{sim\_cocotb} Standard simulation of SIPO conversion.
+\end{itemize}
+
+Then you must use the cocotb sim target. The targets above can be run with various parameters.
+\begin{lstlisting}[language=bash]
+  $ fusesoc run --target sim_cocotb AFRL:simple:sipo:1.0.0
+\end{lstlisting}
+
+\newpage
+
+\section{Module Documentation} \label{Module Documentation}
+
+\par
+
+\begin{itemize}
+\item \textbf{sipo} SIPO converter\\
+\item \textbf{tb\_sipo-v} Verilog test bench\\
+\item \textbf{tb\_cocotb-py} Cocotb python test routines\\
+\item \textbf{tb\_cocotb-v} Cocotb verilog test bench\\
+\end{itemize}
+The next sections document the module in detail.
+

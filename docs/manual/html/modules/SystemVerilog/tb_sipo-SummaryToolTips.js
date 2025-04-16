@@ -1,0 +1,1 @@
+﻿NDSummary.OnToolTipsLoaded("SystemVerilogModule:tb_sipo",{49:"<div class=\"NDToolTip TModule LSystemVerilog\"><div id=\"NDPrototype49\" class=\"NDPrototype\"><div class=\"PSection PPlainSection\"><span class=\"SHKeyword\">module</span> tb_sipo ()</div></div><div class=\"TTSummary\">Test bench for serial in parallel out</div></div>"});

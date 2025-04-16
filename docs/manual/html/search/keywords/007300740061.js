@@ -1,0 +1,1 @@
+﻿NDSearch.OnPrefixDataLoaded("sta",["Function"],[["start_clock",,[["piso",,,,0,"File2:tb_cocotb.py:piso.start_clock","PythonClass:piso:start_clock"]]]]);

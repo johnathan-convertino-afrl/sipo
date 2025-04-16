@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+
+<!--Converted with LaTeX2HTML 2024 (Released January 1, 2024) -->
+<HTML lang="en">
+<HEAD>
+<TITLE>In a Project</TITLE>
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="viewport" CONTENT="width=device-width, initial-scale=1.0">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2024">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="previous" HREF="SIPO_node4.html">
+<LINK REL="next" HREF="SIPO_node7.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A
+ HREF="SIPO_node7.html">
+<IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
+<A
+ HREF="SIPO_node2.html">
+<IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
+<A
+ HREF="SIPO_node5.html">
+<IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
+<A ID="tex2html57"
+  HREF="SIPO_node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A
+ HREF="SIPO_node7.html">Architecture</A>
+<B> Up:</B> <A
+ HREF="SIPO_node2.html">Usage</A>
+<B> Previous:</B> <A
+ HREF="SIPO_node5.html">fusesoc_info Depenecies</A>
+ &nbsp; <B>  <A ID="tex2html58"
+  HREF="SIPO_node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A ID="SECTION00023000000000000000">
+In a Project</A>
+</H2>
+
+<P>
+This core is made to interface for serial to parallel data. On each enable pulse on a positive clock edge the input serial
+line will be sampled. The counter starts at 0 and the shift is complete once it hits BUS_WIDTH * 8. For a 32 bit word you will
+need 32 enable pulses. These will correspond to counter output 0 to 31. 32 will signal the shift is done and the parallel output
+data is valid. Once it is valid data can be read and load asserted. Load will reset the core and clear it for the next shift operation.
+
+<OL>
+<LI>Set ena to 1 at rising clock edge for one clock cycle
+</LI>
+<LI>Continue till the counter hits the number of bits needed.
+</LI>
+<LI>Read the parallel data output to capture data.
+</LI>
+<LI>Assert load to 1 to restart counter and clear parallel register.
+</LI>
+</OL>
+
+<P>
+<TABLE FRAME="VOID" CELLPADDING="4"><TR><TD>
+<PRE>
+
+</PRE>
+</TD></TR></TABLE>
+
+<P>
+<BR><HR>
+
+</BODY>
+</HTML>

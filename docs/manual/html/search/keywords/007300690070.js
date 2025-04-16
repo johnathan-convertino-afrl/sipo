@@ -1,0 +1,1 @@
+﻿NDSearch.OnPrefixDataLoaded("sip",["Module","File"],[["sipo",,[[,,,,0,"File:sipo.v:sipo","SystemVerilogModule:sipo"],[,"sipo.v",,,1,"File:sipo.v:sipo.v"]]]]);

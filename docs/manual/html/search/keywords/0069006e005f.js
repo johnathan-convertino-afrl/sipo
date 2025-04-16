@@ -1,0 +1,1 @@
+﻿NDSearch.OnPrefixDataLoaded("in_",["Function"],[["in_reset",,[["piso",,,,0,"File2:tb_cocotb.py:piso.in_reset","PythonClass:piso:in_reset"]]]]);

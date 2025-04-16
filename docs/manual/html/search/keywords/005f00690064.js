@@ -1,0 +1,1 @@
+﻿NDSearch.OnPrefixDataLoaded("_id",["Variable"],[["_idle_write",,[["piso",,,,0,"File2:tb_cocotb.py:piso._idle_write","PythonClass:piso:_idle_write"]]]]);
