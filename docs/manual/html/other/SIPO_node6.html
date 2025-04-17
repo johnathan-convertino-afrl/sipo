@@ -48,11 +48,12 @@ In a Project</A>
 </H2>
 
 <P>
-This core is meant to be used on the same clock domain as the input parallel data. The serial input rate is set by the enable.
+This core is made to be used on the same clock domain as the input parallel data. The serial input rate is set by the enable.
 The enable should only be pulsed for one clock cycle. If the clock is the rate the enable should be tied high. Load has to be
-used to get the ouput data and reset the input count. The data count allows other cores to know what bit currently being
-input from the core. On load no data as been input to the register so the count is reset to 0. Once enable is toggeled the count
-will increment and indicates how many bits of the word are contained in the register.
+used to get the output data and reset the input count. The data count provers other cores a bit count to know what bit currently being
+input to the core. On load data is cleared from the input register and the count is reset to 0. Once enable is toggled the count
+will increment and indicates how many bits of the word are contained in the register. The register is full once the max number
+of bits is reached on the counter output.
 
 <OL>
 <LI>Set ena to 1 at rising clock edge for one clock cycle
@@ -77,7 +78,7 @@ Example:
 </TD></TR></TABLE>
 
 <P>
-Module instantion:
+Module instantiation:
 <TABLE FRAME="VOID" CELLPADDING="4"><TR><TD>
 <PRE>
     sipo #(

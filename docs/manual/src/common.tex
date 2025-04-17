@@ -27,9 +27,9 @@
 \subsection{Introduction}
 
 \par
-This core converts the serial data to parallel. This is done on a positive clock edge in relation to a active high enable.
-The enable sets the rate data is sampled and should only be held high for the same period as the main clock. This core is useful for
-any serial to parallel operation such as UARTS, SPI, i2c, 1553, etc. This is a fusesoc 2.X compatable core and its VLNV is
+This core converts the serial input data to parallel output data. This is done on a positive clock edge in relation to a active high enable.
+The enable sets the rate data is sampled. This core is useful for
+any serial to parallel operation such as UARTS, SPI, i2c, 1553, etc. This is a fusesoc 2.X compatible core and its VLNV is
 AFRL:simple:sipo:X.X.X.
 
 \subsection{Dependencies}
@@ -47,11 +47,12 @@ The following are the dependencies of the cores.
 
 \subsection{In a Project}
 \par
-This core is meant to be used on the same clock domain as the input parallel data. The serial input rate is set by the enable.
+This core is made to be used on the same clock domain as the input parallel data. The serial input rate is set by the enable.
 The enable should only be pulsed for one clock cycle. If the clock is the rate the enable should be tied high. Load has to be
-used to get the ouput data and reset the input count. The data count allows other cores to know what bit currently being
-input from the core. On load no data as been input to the register so the count is reset to 0. Once enable is toggeled the count
-will increment and indicates how many bits of the word are contained in the register.
+used to get the output data and reset the input count. The data count provers other cores a bit count to know what bit currently being
+input to the core. On load data is cleared from the input register and the count is reset to 0. Once enable is toggled the count
+will increment and indicates how many bits of the word are contained in the register. The register is full once the max number
+of bits is reached on the counter output.
 \begin{enumerate}
   \item Set ena to 1 at rising clock edge for one clock cycle
   \item Continue till the counter hits the number of bits needed.
@@ -67,7 +68,7 @@ Example:
       - ">=AFRL:simple:sipo:1.0.0"
 \end{lstlisting}
 
-Module instantion:
+Module instantiation:
 \begin{lstlisting}[language=Verilog]
     sipo #(
       .BUS_WIDTH(4)
@@ -98,20 +99,19 @@ The only module is the sipo module. It is listed below.
 Please see \ref{Module Documentation} for more information.
 
 \subsection{Waveform}
-Below is a waveform in a typical application of the core. This shows the count down and how the enable is pulsed to increment it.
+Below is a waveform in a typical application of the core. This shows the count up and how the enable is pulsed to increment it.
 
 \includegraphics[width=\textwidth]{src/diagrams/waveform.png}
 
 \section{Building}
 
 \par
-The SIPO core is written in Verilog 2001. They should synthesize in any modern FPGA software. The core comes as a fusesoc packaged core and can be
-included in any other core. Be sure to make sure you have meet the dependencies listed in the previous section.
+The SIPO core is written in Verilog 2001. They should synthesize in any modern FPGA software. The core comes as a fusesoc packaged core and can be included in any other core as a dependency. Be sure you have meet the dependencies listed in the previous section.
 
 \subsection{fusesoc}
 \par
 Fusesoc is a system for building FPGA software without relying on the internal project management of the tool. Avoiding vendor lock in to Vivado or Quartus.
-These cores, when included in a project, can be easily integrated and targets created based upon the end developer needs. The core by itself is not a part of
+These cores, when included in a project, can be easily integrated into targets created based upon the end developer needs. The core by itself is not a part of
 a system and should be integrated into a fusesoc based system. Simulations are setup to use fusesoc and are a part of its targets.
 
 \subsection{Source Files}
@@ -143,16 +143,16 @@ Below highlights important folders from the root of the directory.
 
 \section{Simulation}
 \par
-There are a few different simulations that can be run for this core.
+There are a few different simulations that can be run for this core. The backend used for testing is iverilog for verilog or cocotb simulations. Usually GTKWave is used to view the fst waveform output. Cocotb are the unit tests that attempt to give a pass/fail verification to the core operation.
 
 \subsection{iverilog}
 \par
-iverilog is used for simple test benches for quick verification, visually, of the core. This will autofinish after it has
+iverilog is used for simple test benches for quick visual verification of the core. This will autofinish after it has
 run up to a certain number of words have been output.
 
 \subsection{cocotb}
 \par
-This method allows for quick writing of test benches that acutally assert and check the state of the core.
+This method allows for quick writing of test benches that actually assert and check the state of the core.
 These tests are much more conclusive since it will run all test vectors and generate a report if they
 pass or fail. All tests generate to a single fst wave file. The method of launching the tests is to use
 fusesoc. These have not been written to use the python runner method or makefiles.
@@ -166,7 +166,7 @@ The targets available are listed below.
   \item \textbf{sim\_cocotb} Standard simulation PISO conversion using cocotb.
 \end{itemize}
 
-Then you must use the cocotb sim target. The targets above can be run with various parameters.
+The targets above can be run with various parameters.
 \begin{lstlisting}[language=bash]
   $ fusesoc run --target sim_cocotb AFRL:simple:sipo:1.0.0
 \end{lstlisting}
