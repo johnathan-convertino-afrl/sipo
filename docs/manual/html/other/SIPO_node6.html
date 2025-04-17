@@ -27,7 +27,7 @@
 <A
  HREF="SIPO_node5.html">
 <IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html57"
+<A ID="tex2html59"
   HREF="SIPO_node1.html">
 <IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  
 <BR>
@@ -37,7 +37,7 @@
  HREF="SIPO_node2.html">Usage</A>
 <B> Previous:</B> <A
  HREF="SIPO_node5.html">fusesoc_info Depenecies</A>
- &nbsp; <B>  <A ID="tex2html58"
+ &nbsp; <B>  <A ID="tex2html60"
   HREF="SIPO_node1.html">Contents</A></B> 
 <BR>
 <BR></DIV>
@@ -48,10 +48,11 @@ In a Project</A>
 </H2>
 
 <P>
-This core is made to interface for serial to parallel data. On each enable pulse on a positive clock edge the input serial
-line will be sampled. The counter starts at 0 and the shift is complete once it hits BUS_WIDTH * 8. For a 32 bit word you will
-need 32 enable pulses. These will correspond to counter output 0 to 31. 32 will signal the shift is done and the parallel output
-data is valid. Once it is valid data can be read and load asserted. Load will reset the core and clear it for the next shift operation.
+This core is meant to be used on the same clock domain as the input parallel data. The serial input rate is set by the enable.
+The enable should only be pulsed for one clock cycle. If the clock is the rate the enable should be tied high. Load has to be
+used to get the ouput data and reset the input count. The data count allows other cores to know what bit currently being
+input from the core. On load no data as been input to the register so the count is reset to 0. Once enable is toggeled the count
+will increment and indicates how many bits of the word are contained in the register.
 
 <OL>
 <LI>Set ena to 1 at rising clock edge for one clock cycle
@@ -65,9 +66,31 @@ data is valid. Once it is valid data can be read and load asserted. Load will re
 </OL>
 
 <P>
+Adding the core to a fusesoc project, outside of adding the verilog module to your code, requires it is added as dependency.
+Example:
 <TABLE FRAME="VOID" CELLPADDING="4"><TR><TD>
 <PRE>
+  dep:
+    depend:
+      - "&gt;=AFRL:simple:sipo:1.0.0"
+</PRE>
+</TD></TR></TABLE>
 
+<P>
+Module instantion:
+<TABLE FRAME="VOID" CELLPADDING="4"><TR><TD>
+<PRE>
+    sipo #(
+      .BUS_WIDTH(4)
+    ) inst_sipo (
+      .clk(clk),
+      .rstn(rstn),
+      .ena(ena),
+      .load(load),
+      .pdata(pdata),
+      .sdata(sdata),
+      .dcount(dcount)
+    );
 </PRE>
 </TD></TR></TABLE>
 
