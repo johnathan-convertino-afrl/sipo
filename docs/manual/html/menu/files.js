@@ -1,1 +1,1 @@
-﻿NDMenu.OnSectionLoaded("files.js",[[2,"up_apb3","File:",[[1,"sipo.v"]]],[2,"up_apb3_tb","File2:",[[1,"tb_cocotb.py"],[1,"tb_cocotb.v"],[1,"tb_sipo.v"]]]]);
+﻿NDMenu.OnSectionLoaded("files.js",[[2,"source","File:",[[1,"sipo.v"]]],[2,"test_bench","File2:",[[1,"tb_cocotb.py"],[1,"tb_cocotb.v"],[1,"tb_sipo.v"]]]]);
