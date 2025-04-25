@@ -92,14 +92,14 @@ module sipo #(
       end else begin
         r_dcount <= r_dcount;
 
-        if(load == 1'b1)
-        begin
-          r_dcount <= 0;
-        end
-
         if(ena == 1'b1)
         begin
           r_dcount <= r_dcount + 1;
+        end
+
+        if(load == 1'b1)
+        begin
+          r_dcount <= 0;
         end
 
         if(r_dcount == BUS_WIDTH*8 && load != 1'b1)
@@ -118,14 +118,14 @@ module sipo #(
       end else begin
         r_ppdata <= r_ppdata;
 
-        if(load == 1'b1)
-        begin
-          r_ppdata <= 0;
-        end
-
         if(ena == 1'b1)
         begin
           r_ppdata <= {r_ppdata[BUS_WIDTH*8-2:0], sdata};
+        end
+
+        if(load == 1'b1)
+        begin
+          r_ppdata <= 0;
         end
       end
     end
