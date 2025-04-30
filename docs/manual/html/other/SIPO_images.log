@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.1.27)  17 APR 2025 14:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.1.27)  30 APR 2025 10:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -304,10 +304,10 @@ Package pdftex.def Info: img/AFRL.png  used on input line 122.
 Preview: Tightpage -32890 -32890 32890 32890
 [1 </home/convertinoj/Programming/HDL/fusesoc/ip_pub/simple/SIPO/docs/manual/im
 g/AFRL.png>]
-<src/diagrams/waveform.png, id=11, 1602.98875pt x 164.11313pt>
-File: src/diagrams/waveform.png Graphic file (type png)
-<use src/diagrams/waveform.png>
-Package pdftex.def Info: src/diagrams/waveform.png  used on input line 135.
+<img/diagrams/waveform.png, id=11, 1602.98875pt x 164.11313pt>
+File: img/diagrams/waveform.png Graphic file (type png)
+<use img/diagrams/waveform.png>
+Package pdftex.def Info: img/diagrams/waveform.png  used on input line 135.
 (pdftex.def)             Requested size: 345.0pt x 35.32118pt.
 
 Overfull \hbox (15.0pt too wide) in paragraph at lines 135--136
@@ -318,8 +318,8 @@ Overfull \hbox (15.0pt too wide) in paragraph at lines 135--136
 :tex2html_wrap238:lthtmlCropMarkHeight:=41.32118pt
 
 :tex2html_wrap238:lthtmlCropMarkDepth:=0.0pt:1ex:=4.30554pt
-[2 </home/convertinoj/Programming/HDL/fusesoc/ip_pub/simple/SIPO/docs/manual/sr
-c/diagrams/waveform.png (PNG copy)>]
+[2 </home/convertinoj/Programming/HDL/fusesoc/ip_pub/simple/SIPO/docs/manual/im
+g/diagrams/waveform.png (PNG copy)>]
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 148.
 LaTeX Font Info:    External font `cmex10' loaded for size

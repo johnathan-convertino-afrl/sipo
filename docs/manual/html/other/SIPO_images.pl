@@ -12,10 +12,10 @@ $cached_env_img{$key} = q|<IMG
  STYLE="height: 15.85ex; vertical-align: -0.12ex; " SRC="|."$dir".q|SIPO_img1.svg"
  ALT="\includegraphics[width=0.90\textwidth,height=\textheight,keepaspectratio]{img/AFRL.png}">|; 
 
-$key = q/includegraphics[width=textwidth]{srcslashdiagramsslashwaveform.png};MSF=1.6;AAT/;
+$key = q/includegraphics[width=textwidth]{imgslashdiagramsslashwaveform.png};MSF=1.6;AAT/;
 $cached_env_img{$key} = q|<IMG
  STYLE="height: 8.41ex; vertical-align: -0.12ex; " SRC="|."$dir".q|SIPO_img2.svg"
- ALT="\includegraphics[width=\textwidth]{src/diagrams/waveform.png}">|; 
+ ALT="\includegraphics[width=\textwidth]{img/diagrams/waveform.png}">|; 
 
 1;
 
