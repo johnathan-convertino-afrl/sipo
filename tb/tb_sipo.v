@@ -72,6 +72,7 @@ module tb_sipo ();
     .clk(tb_clk),
     .rstn(tb_rstn),
     .ena(tb_ena),
+    .rev(1'b0),
     .load(tb_load),
     .pdata(tb_pdata),
     .sdata(tb_sdata[7]),

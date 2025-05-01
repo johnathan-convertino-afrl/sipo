@@ -40,13 +40,14 @@
  *
  * Parameters:
  *
- *   BUS_WIDTH       - Width of the APB3 bus data port in bytes.
+ *   BUS_WIDTH       - Width of the data port in bytes.
  *
  * Ports:
  *
  *   clk     - Clock
  *   rstn    - negative reset
  *   ena     - enable for core, use to change input rate. Enable serial shift input.
+ *   rev     - reverse, 0 is MSb first out, 1 is LSb first out.
  *   load    - load parallel data from core, and reset counters for next incoming serial data.
  *   pdata   - parallel data output, valid when dcount is BUS_WIDTH*8.
  *   sdata   - serialized data input.
@@ -59,6 +60,7 @@ module tb_cocotb #(
       input                     clk,
       input                     rstn,
       input                     ena,
+      input                     rev,
       input                     load,
       output  [BUS_WIDTH*8-1:0] pdata,
       input                     sdata,
@@ -84,6 +86,7 @@ module tb_cocotb #(
     .clk(clk),
     .rstn(rstn),
     .ena(ena),
+    .rev(rev),
     .load(load),
     .pdata(pdata),
     .sdata(sdata),

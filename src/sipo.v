@@ -48,6 +48,7 @@
  *  clk     - global clock for the core.
  *  rstn    - negative syncronus reset to clk.
  *  ena     - enable for core, use to change input rate. Enable serial shift input.
+ *  rev     - reverse, 0 is MSb first out, 1 is LSb first out.
  *  load    - load parallel data from core, and reset counters for next incoming serial data.
  *  pdata   - parallel data output, valid when dcount is BUS_WIDTH*8.
  *  sdata   - serialized data input.
@@ -60,6 +61,7 @@ module sipo #(
       input                     clk,
       input                     rstn,
       input                     ena,
+      input                     rev,
       input                     load,
       output  [BUS_WIDTH*8-1:0] pdata,
       input                     sdata,
@@ -120,7 +122,12 @@ module sipo #(
 
         if(ena == 1'b1)
         begin
-          r_ppdata <= {r_ppdata[BUS_WIDTH*8-2:0], sdata};
+          if(rev == 1'b0)
+          begin
+            r_ppdata <= {r_ppdata[BUS_WIDTH*8-2:0], sdata};
+          end else begin
+            r_ppdata <= {sdata, r_ppdata[BUS_WIDTH*8-1:1]};
+          end
         end
 
         if(load == 1'b1)

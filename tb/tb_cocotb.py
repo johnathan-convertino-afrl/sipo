@@ -81,7 +81,10 @@ class piso:
         self._idle_write.clear()
         self._active = True
         data = await self.wqueue.get()
-        counter = self._dut.BUS_WIDTH.value*8-1
+        if(self._dut.rev.value):
+          counter = 0
+        else:
+          counter = self._dut.BUS_WIDTH.value*8-1
 
 
         while self._active:
@@ -91,9 +94,12 @@ class piso:
           await RisingEdge(self._dut.clk)
           self._dut.ena.value = 0
           await Timer(20, units="ns")
-          counter -= 1
+          if(self._dut.rev.value):
+            counter += 1
+          else:
+            counter -= 1
 
-          if(counter < 0):
+          if((counter < 0 and not self._dut.rev.value) or (counter == self._dut.BUS_WIDTH.value*8 and self._dut.rev.value)):
             self._dut.ena.value = 0
             self._active = False
             self._idle_write.set()
@@ -129,14 +135,14 @@ async def reset_dut(dut):
   await Timer(5, units="ns")
   dut.rstn.value = 1
 
-# Function: increment test
+# Function: increment test MSb
 # Coroutine that is identified as a test routine. Write data, on one clock edge, read
 # on the next.
 #
 # Parameters:
 #   dut - Device under test passed from cocotb.
 @cocotb.test()
-async def increment_test(dut):
+async def increment_test_MSb(dut):
 
     mclock = start_clock(dut)
 
@@ -145,6 +151,51 @@ async def increment_test(dut):
     dut.load.value = 0
 
     dut.ena.value = 0
+
+    dut.rev.value = 0
+
+    ena_pulse = Timer(mclock.period)
+
+    await reset_dut(dut)
+
+    for x in range(1, 2**8):
+
+        await converter.set_data(x)
+
+        await RisingEdge(dut.clk)
+
+        dut.load.value = 1
+
+        rx_data = dut.pdata.value.integer
+
+        await RisingEdge(dut.clk)
+
+        dut.load.value = 0
+
+        assert rx_data == x, "SENT DATA DOES NOT MATCH RECEIVED"
+
+        await Timer(20, units="ns")
+
+    await RisingEdge(dut.clk)
+
+# Function: increment test LSb
+# Coroutine that is identified as a test routine. Write data, on one clock edge, read
+# on the next.
+#
+# Parameters:
+#   dut - Device under test passed from cocotb.
+@cocotb.test()
+async def increment_test_LSb(dut):
+
+    mclock = start_clock(dut)
+
+    converter = piso(dut)
+
+    dut.load.value = 0
+
+    dut.ena.value = 0
+
+    dut.rev.value = 1
 
     ena_pulse = Timer(mclock.period)
 

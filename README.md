@@ -9,7 +9,7 @@
    
    date: 2025.04.16
    
-   details: Convert Serial to Parallel data at some baud.
+   details: Convert Serial to Parallel data at some baud. MSb or LSb first selectable.
    
    license: MIT   
    
