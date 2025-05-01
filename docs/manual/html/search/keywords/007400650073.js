@@ -1,1 +1,1 @@
-﻿NDSearch.OnPrefixDataLoaded("tes",["Function"],[["test",,[["piso","increment test",,,0,"File2:tb_cocotb.py:piso.increment_test","PythonClass:piso:increment_test"]]]]);
+﻿NDSearch.OnPrefixDataLoaded("tes",["Function"],[["test",,[["piso","increment test LSb",,,0,"File2:tb_cocotb.py:piso.increment_test_LSb","PythonClass:piso:increment_test_LSb"],["piso","increment test MSb",,,0,"File2:tb_cocotb.py:piso.increment_test_MSb","PythonClass:piso:increment_test_MSb"]]]]);

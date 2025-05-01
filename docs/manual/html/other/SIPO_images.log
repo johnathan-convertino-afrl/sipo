@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.1.27)  30 APR 2025 10:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.1.27)  1 MAY 2025 16:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -298,37 +298,55 @@ File: img/AFRL.png Graphic file (type png)
 Package pdftex.def Info: img/AFRL.png  used on input line 122.
 (pdftex.def)             Requested size: 310.49771pt x 67.51028pt.
 
-:tex2html_wrap229:lthtmlCropMarkHeight:=73.51028pt
+:tex2html_wrap236:lthtmlCropMarkHeight:=73.51028pt
 
-:tex2html_wrap229:lthtmlCropMarkDepth:=0.0pt:1ex:=4.30554pt
+:tex2html_wrap236:lthtmlCropMarkDepth:=0.0pt:1ex:=4.30554pt
 Preview: Tightpage -32890 -32890 32890 32890
 [1 </home/convertinoj/Programming/HDL/fusesoc/ip_pub/simple/SIPO/docs/manual/im
 g/AFRL.png>]
-<img/diagrams/waveform.png, id=11, 1602.98875pt x 164.11313pt>
-File: img/diagrams/waveform.png Graphic file (type png)
-<use img/diagrams/waveform.png>
-Package pdftex.def Info: img/diagrams/waveform.png  used on input line 135.
-(pdftex.def)             Requested size: 345.0pt x 35.32118pt.
+<img/diagrams/waveform_rev0.png, id=11, 2333.71875pt x 338.76563pt>
+File: img/diagrams/waveform_rev0.png Graphic file (type png)
+<use img/diagrams/waveform_rev0.png>
+Package pdftex.def Info: img/diagrams/waveform_rev0.png  used on input line 135
+.
+(pdftex.def)             Requested size: 345.0pt x 50.07863pt.
 
 Overfull \hbox (15.0pt too wide) in paragraph at lines 135--136
 [][] 
  []
 
 
-:tex2html_wrap238:lthtmlCropMarkHeight:=41.32118pt
+:tex2html_wrap245:lthtmlCropMarkHeight:=56.07863pt
 
-:tex2html_wrap238:lthtmlCropMarkDepth:=0.0pt:1ex:=4.30554pt
+:tex2html_wrap245:lthtmlCropMarkDepth:=0.0pt:1ex:=4.30554pt
 [2 </home/convertinoj/Programming/HDL/fusesoc/ip_pub/simple/SIPO/docs/manual/im
-g/diagrams/waveform.png (PNG copy)>]
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 148.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 148.
+g/diagrams/waveform_rev0.png>]
+<img/diagrams/waveform_rev1.png, id=17, 2333.71875pt x 338.76563pt>
+File: img/diagrams/waveform_rev1.png Graphic file (type png)
+<use img/diagrams/waveform_rev1.png>
+Package pdftex.def Info: img/diagrams/waveform_rev1.png  used on input line 141
+.
+(pdftex.def)             Requested size: 345.0pt x 50.07863pt.
 
-:tex2html_wrap_inline111:lthtmlCropMarkHeight:=6.0pt
+Overfull \hbox (15.0pt too wide) in paragraph at lines 141--142
+[][] 
+ []
 
-:tex2html_wrap_inline111:lthtmlCropMarkDepth:=0.0pt:1ex:=4.30554pt
-[3] (./SIPO_images.aux)
+
+:tex2html_wrap246:lthtmlCropMarkHeight:=56.07863pt
+
+:tex2html_wrap246:lthtmlCropMarkDepth:=0.0pt:1ex:=4.30554pt
+[3 </home/convertinoj/Programming/HDL/fusesoc/ip_pub/simple/SIPO/docs/manual/im
+g/diagrams/waveform_rev1.png>]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 154.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 154.
+
+:tex2html_wrap_inline112:lthtmlCropMarkHeight:=6.0pt
+
+:tex2html_wrap_inline112:lthtmlCropMarkDepth:=0.0pt:1ex:=4.30554pt
+[4] (./SIPO_images.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
@@ -343,18 +361,18 @@ Package rerunfilecheck Info: Checksums for `SIPO_images.out':
 (rerunfilecheck)             After:  D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 10387 strings out of 476182
- 159293 string characters out of 5795595
+ 10395 strings out of 476182
+ 159592 string characters out of 5795595
  1923975 words of memory out of 5000000
- 32305 multiletter control sequences out of 15000+600000
+ 32312 multiletter control sequences out of 15000+600000
  558069 words of font info for 36 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  75i,5n,79p,239b,437s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on SIPO_images.pdf (3 pages, 72484 bytes).
+Output written on SIPO_images.pdf (4 pages, 137263 bytes).
 PDF statistics:
- 24 PDF objects out of 1000 (max. 8388607)
- 15 compressed objects within 1 object stream
- 3 named destinations out of 1000 (max. 500000)
- 11 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 31 PDF objects out of 1000 (max. 8388607)
+ 18 compressed objects within 1 object stream
+ 4 named destinations out of 1000 (max. 500000)
+ 16 words of extra memory for PDF output out of 10000 (max. 10000000)
 

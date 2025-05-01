@@ -53,7 +53,8 @@ This core is made to interface for serial to parallel data. On each enable pulse
 line will be sampled. The counter starts at 0 and the shift is complete once it hits BUS_WIDTH * 8. For a 32 bit word you will
 need 32 enable pulses. These will correspond to counter output 0 to 31. 32 will signal the shift is done and the parallel output
 data is valid. Once it is valid data can be read and load asserted. Load will reset the core and clear it for the next shift operation.
-All data is shifted in MSb to LSb. Meaning Bit 31 is input first and 0 is last.
+All data is shifted in MSb to LSb or LSb to MSb. This is set with the rev input. When active high (1) the LSb to MSb method is used. When
+rev is set to 0 MSb to LSb is used.
 The only module is the sipo module. It is listed below.
 
 <P>
