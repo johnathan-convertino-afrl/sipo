@@ -58,14 +58,14 @@
 module sipo #(
       parameter BUS_WIDTH = 1
     ) (
-      input                     clk,
-      input                     rstn,
-      input                     ena,
-      input                     rev,
-      input                     load,
-      output  [BUS_WIDTH*8-1:0] pdata,
-      input                     sdata,
-      output  [BUS_WIDTH*8-1:0] dcount
+      input   wire                    clk,
+      input   wire                    rstn,
+      input   wire                    ena,
+      input   wire                    rev,
+      input   wire                    load,
+      output  wire  [BUS_WIDTH*8-1:0] pdata,
+      input   wire                    sdata,
+      output  wire  [BUS_WIDTH*8-1:0] dcount
     );
 
     `include "util_helper_math.vh"
@@ -111,7 +111,7 @@ module sipo #(
       end
     end
 
-    // Positive edge shift register, serial data is left shifted (C) in on clk+ena.
+    // Positive edge shift register, serial data is shifted (C) in on clk+ena.
     always @(posedge clk)
     begin
       if(rstn == 1'b0)
