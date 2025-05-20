@@ -8,10 +8,11 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - name: Execute fusesoc lint
+      - name: Install fusesoc
         uses: actions/setup-python@v5
         with:
           python-version: '3.12.3'
           cache: 'pip'
         run: pip install -e fusesoc
+      - name: Run Lint using fusesoc
         run: fusesoc --cores-root . run --target lint $(fusesoc --cores-root . list-cores | tail -1 | awk '{print$1}')
