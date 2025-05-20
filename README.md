@@ -28,15 +28,6 @@
   - [SIPO.pdf](docs/manual/SIPO.pdf)
   - [github page](https://johnathan-convertino-afrl.github.io/sipo/)
 
-### DEPENDENCIES
-#### Build
-
-  - AFRL:utility:helper:1.0.0
-  
-#### Simulation
-
-  - cocotb
-
 ### PARAMETERS
 
 * BUS_WIDTH     : Bus width in number of bytes.
@@ -44,7 +35,7 @@
 ### COMPONENTS
 #### SRC
 
-* up_sipo.v
+* sipo.v
 
 #### TB
 
@@ -61,5 +52,6 @@
 
 * RUN WITH: (fusesoc run --target=sim VENDER:CORE:NAME:VERSION)
   - default (for IP integration builds)
+  - lint
   - sim
   - sim_cocotb

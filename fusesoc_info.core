@@ -27,6 +27,16 @@ targets:
   default: &default
     description: Default for IP intergration.
     filesets: [src, dep]
+
+  lint:
+    <<: *default
+    description: Lint with Verible
+    toplevel: sipo
+    default_tool: veriblelint
+    tools:
+      veriblelint:
+        rules:
+         - "-explicit-parameter-storage-type,-parameter-name-style,-line-length"
   
   sim: &sim
     <<: *default

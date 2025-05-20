@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.1.27)  1 MAY 2025 16:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.1.27)  20 MAY 2025 14:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -298,9 +298,9 @@ File: img/AFRL.png Graphic file (type png)
 Package pdftex.def Info: img/AFRL.png  used on input line 122.
 (pdftex.def)             Requested size: 310.49771pt x 67.51028pt.
 
-:tex2html_wrap236:lthtmlCropMarkHeight:=73.51028pt
+:tex2html_wrap240:lthtmlCropMarkHeight:=73.51028pt
 
-:tex2html_wrap236:lthtmlCropMarkDepth:=0.0pt:1ex:=4.30554pt
+:tex2html_wrap240:lthtmlCropMarkDepth:=0.0pt:1ex:=4.30554pt
 Preview: Tightpage -32890 -32890 32890 32890
 [1 </home/convertinoj/Programming/HDL/fusesoc/ip_pub/simple/SIPO/docs/manual/im
 g/AFRL.png>]
@@ -316,9 +316,9 @@ Overfull \hbox (15.0pt too wide) in paragraph at lines 135--136
  []
 
 
-:tex2html_wrap245:lthtmlCropMarkHeight:=56.07863pt
+:tex2html_wrap249:lthtmlCropMarkHeight:=56.07863pt
 
-:tex2html_wrap245:lthtmlCropMarkDepth:=0.0pt:1ex:=4.30554pt
+:tex2html_wrap249:lthtmlCropMarkDepth:=0.0pt:1ex:=4.30554pt
 [2 </home/convertinoj/Programming/HDL/fusesoc/ip_pub/simple/SIPO/docs/manual/im
 g/diagrams/waveform_rev0.png>]
 <img/diagrams/waveform_rev1.png, id=17, 2333.71875pt x 338.76563pt>
@@ -333,9 +333,9 @@ Overfull \hbox (15.0pt too wide) in paragraph at lines 141--142
  []
 
 
-:tex2html_wrap246:lthtmlCropMarkHeight:=56.07863pt
+:tex2html_wrap250:lthtmlCropMarkHeight:=56.07863pt
 
-:tex2html_wrap246:lthtmlCropMarkDepth:=0.0pt:1ex:=4.30554pt
+:tex2html_wrap250:lthtmlCropMarkDepth:=0.0pt:1ex:=4.30554pt
 [3 </home/convertinoj/Programming/HDL/fusesoc/ip_pub/simple/SIPO/docs/manual/im
 g/diagrams/waveform_rev1.png>]
 LaTeX Font Info:    External font `cmex10' loaded for size
@@ -343,9 +343,9 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 154.
 
-:tex2html_wrap_inline112:lthtmlCropMarkHeight:=6.0pt
+:tex2html_wrap_inline114:lthtmlCropMarkHeight:=6.0pt
 
-:tex2html_wrap_inline112:lthtmlCropMarkDepth:=0.0pt:1ex:=4.30554pt
+:tex2html_wrap_inline114:lthtmlCropMarkDepth:=0.0pt:1ex:=4.30554pt
 [4] (./SIPO_images.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
