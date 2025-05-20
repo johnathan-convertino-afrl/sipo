@@ -15,7 +15,7 @@
 
    Tests: Results of git actions  
 
-   ![Lint Check Status](../../actions/workflows/lint_check.yml/badge.svg)
+   [![Lint Check Status](../../actions/workflows/lint_check.yml/badge.svg)](../../actions)
 
 ---
 
