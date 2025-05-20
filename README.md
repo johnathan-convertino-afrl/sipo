@@ -14,10 +14,8 @@
    license: MIT   
 
    Tests:
-  <a href="actions">
-  <img src="/actions/workflows/lint_check.yml/badge.svg" alt="Lint Status">
-  </a>
-   
+   ![Lint Check Status](/actions/workflows/lint_check.yml/badge.svg)
+
 ---
 
 ### Version
