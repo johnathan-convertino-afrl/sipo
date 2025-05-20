@@ -14,7 +14,7 @@
    license: MIT   
 
    Tests:
-   ![Lint Check Status](./actions/workflows/lint_check.yml/badge.svg)
+   ![Lint Check Status](../../actions/workflows/lint_check.yml/badge.svg)
 
 ---
 
