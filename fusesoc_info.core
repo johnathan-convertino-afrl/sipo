@@ -29,9 +29,9 @@ targets:
     filesets: [src, dep]
 
   lint:
-    <<: *default
     description: Lint with Verible
     toplevel: sipo
+    filesets: [src]
     default_tool: veriblelint
     tools:
       veriblelint:
