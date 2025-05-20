@@ -12,6 +12,11 @@
    details: Convert Serial to Parallel data at some baud. MSb or LSb first selectable.
    
    license: MIT   
+
+   Tests:
+  <a href="actions">
+  <img src="actions/workflows/lint_check.yml/badge.svg" alt="Lint Status">
+  </a>
    
 ---
 
