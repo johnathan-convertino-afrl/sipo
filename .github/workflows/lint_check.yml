@@ -14,5 +14,7 @@ jobs:
           python-version: '3.12.3'
       - name: Install fusesoc
         run: pip install --user fusesoc
+      - name: Path
+        run: pwd
       - name: Run fusesoc
         run: fusesoc --cores-root . run --target lint $(fusesoc --cores-root . list-cores | tail -1 | awk '{print$1}')
