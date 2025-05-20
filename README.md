@@ -15,7 +15,7 @@
 
    Tests:
   <a href="actions">
-  <img src="actions/workflows/lint_check.yml/badge.svg" alt="Lint Status">
+  <img src="/actions/workflows/lint_check.yml/badge.svg" alt="Lint Status">
   </a>
    
 ---
