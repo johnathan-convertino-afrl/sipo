@@ -5,15 +5,16 @@
 
 ---
 
-   author: Jay Convertino   
+   author: Jay Convertino  
    
-   date: 2025.04.16
+   date: 2025.04.16  
    
-   details: Convert Serial to Parallel data at some baud. MSb or LSb first selectable.
+   details: Convert Serial to Parallel data at some baud. MSb or LSb first selectable.  
    
-   license: MIT   
+   license: MIT  
 
-   Tests:
+   Tests: Results of git actions  
+
    ![Lint Check Status](../../actions/workflows/lint_check.yml/badge.svg)
 
 ---
