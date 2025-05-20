@@ -12,7 +12,6 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.12.3'
-          cache: 'pip'
       - name: Install fusesoc
         run: pip install -e fusesoc
       - name: Run fusesoc
