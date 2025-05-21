@@ -19,4 +19,4 @@ jobs:
       - name: Extract verible
         run: mkdir -p verible && tar -xzf verible.tar.gz -C verible --strip-components=1
       - name: Run fusesoc lint target
-        run: PATH=./verible/bin/$PATH fusesoc --cores-root . run --target lint $(fusesoc --cores-root . list-cores | tail -1 | awk '{print$1}')
+        run: PATH=./verible/bin/:$PATH fusesoc --cores-root . run --target lint $(fusesoc --cores-root . list-cores | tail -1 | awk '{print$1}')
