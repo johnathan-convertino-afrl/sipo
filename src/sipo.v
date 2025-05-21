@@ -33,7 +33,7 @@
 //******************************************************************************
 
 `resetall
-`timescale 1 ns/10 ps
+`timescale 1 ns/100 ps
 `default_nettype none
 
 /*
@@ -73,7 +73,7 @@ module sipo #(
     `include "util_helper_math.vh"
 
     localparam CK_COUNT_AMOUNT = (COUNT_AMOUNT > BUS_WIDTH*8 ? BUS_WIDTH*8 : (COUNT_AMOUNT == 0 ? BUS_WIDTH*8 : COUNT_AMOUNT));
-
+    
     // makes life easier, calculate number of bits needed for count register
     localparam COUNT_WIDTH = clogb2(CK_COUNT_AMOUNT)+1;
 

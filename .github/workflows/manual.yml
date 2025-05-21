@@ -6,7 +6,7 @@ on:
       - docs/**
 
 jobs:
-  lint:
+  manual:
     runs-on: ubuntu-latest
 
     steps:
