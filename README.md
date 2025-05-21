@@ -13,9 +13,9 @@
    
    license: MIT  
 
-   Tests: Results of git actions  
+   Actions:  
 
-   [![Lint Check Status](../../actions/workflows/lint_check.yml/badge.svg)](../../actions)
+   [![Lint Status](../../actions/workflows/lint.yml/badge.svg)](../../actions)
 
 ---
 
