@@ -39,7 +39,7 @@
 /*
  * Module: sipo
  *
- * serial in parallel out
+ * Serial to Parallel out
  *
  * Parametes:
  *  BUS_WIDTH    - width of the parallel data input in bytes.
