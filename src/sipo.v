@@ -72,10 +72,10 @@ module sipo #(
     );
 
     wire [ 7:0] s_count_amount;
-    
+
     // data count register
     reg [ 7:0] r_dcount;
-    
+
     // amount to count register
     reg [ 7:0] r_count_amount;
 
@@ -87,7 +87,7 @@ module sipo #(
 
     // assign parallel data register to output.
     assign pdata = r_pdata;
-    
+
     assign s_count_amount = (reg_count_amount > BUS_WIDTH*8 : BUS_WIDTH*8 : (reg_count_amount == 0 ? BUS_WIDTH*8 : reg_count_amount));
 
     // Positive edge data count that is incremented on enable pulse.
@@ -104,7 +104,7 @@ module sipo #(
         begin
           r_count_amount <= s_count_amount;
         end
-        
+
         if(ena == 1'b1)
         begin
           r_dcount <= r_dcount + 1;
