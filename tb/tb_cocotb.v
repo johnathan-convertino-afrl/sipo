@@ -64,7 +64,7 @@ module tb_cocotb #(
       input                     load,
       output  [BUS_WIDTH*8-1:0] pdata,
       input                     sdata,
-      output  [BUS_WIDTH*8-1:0] dcount
+      output  [ 7:0]            dcount
   );
   // fst dump command
   initial begin

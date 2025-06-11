@@ -75,6 +75,9 @@ module sipo #(
     
     // data count register
     reg [ 7:0] r_dcount;
+    
+    // amount to count register
+    reg [ 7:0] r_count_amount;
 
     // register to contain input parallel data that is positive edge shifted.
     reg [BUS_WIDTH*8-1:0] r_pdata;
@@ -92,10 +95,16 @@ module sipo #(
     begin
       if(rstn == 1'b0)
       begin
-        r_dcount <= 0;
+        r_dcount        <= 0;
+        r_count_amount  <= s_count_amount;
       end else begin
         r_dcount <= r_dcount;
 
+        if(r_dcount == 0)
+        begin
+          r_count_amount <= s_count_amount;
+        end
+        
         if(ena == 1'b1)
         begin
           r_dcount <= r_dcount + 1;
@@ -106,7 +115,7 @@ module sipo #(
           r_dcount <= 0;
         end
 
-        if(r_dcount == s_count_amount && load != 1'b1)
+        if(r_dcount == r_count_amount && load != 1'b1)
         begin
           r_dcount <= r_dcount;
         end
@@ -123,7 +132,7 @@ module sipo #(
         r_pdata <= r_pdata;
 
         // shift in data till we hit are count.
-        if(ena == 1'b1 && r_dcount != s_count_amount)
+        if(ena == 1'b1 && r_dcount != r_count_amount)
         begin
           if(rev == 1'b0)
           begin
