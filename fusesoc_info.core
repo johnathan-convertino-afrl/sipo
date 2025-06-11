@@ -1,6 +1,6 @@
 CAPI=2:
 
-name: AFRL:simple:sipo:1.0.0
+name: AFRL:simple:sipo:1.0.1
 description: Serial to Parallel core
 
 filesets:
@@ -19,14 +19,10 @@ filesets:
       - tb/tb_cocotb.py : {file_type : user, copyto : .}
       - tb/tb_cocotb.v : { file_type: verilogSource }
     
-  dep:
-    depend:
-      - AFRL:utility:helper:1.0.0
-    
 targets:
   default: &default
     description: Default for IP intergration.
-    filesets: [src, dep]
+    filesets: [src]
 
   lint:
     description: Lint with Verible

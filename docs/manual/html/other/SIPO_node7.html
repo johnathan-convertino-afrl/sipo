@@ -3,7 +3,7 @@
 <!--Converted with LaTeX2HTML 2024 (Released January 1, 2024) -->
 <HTML lang="en">
 <HEAD>
-<TITLE>Architecture</TITLE>
+<TITLE>Waveform</TITLE>
 
 <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
 <META NAME="viewport" CONTENT="width=device-width, initial-scale=1.0">
@@ -11,8 +11,7 @@
 
 <LINK REL="STYLESHEET" HREF="html.css">
 
-<LINK REL="next" HREF="SIPO_node9.html">
-<LINK REL="previous" HREF="SIPO_node2.html">
+<LINK REL="previous" HREF="SIPO_node6.html">
 <LINK REL="next" HREF="SIPO_node8.html">
 </HEAD>
 
@@ -23,60 +22,48 @@
  HREF="SIPO_node8.html">
 <IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
 <A
- HREF="html.html">
+ HREF="SIPO_node6.html">
 <IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
 <A
  HREF="SIPO_node6.html">
 <IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html61"
+<A ID="tex2html59"
   HREF="SIPO_node1.html">
 <IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  
 <BR>
 <B> Next:</B> <A
- HREF="SIPO_node8.html">Waveform</A>
+ HREF="SIPO_node8.html">Building</A>
 <B> Up:</B> <A
- HREF="html.html">html</A>
+ HREF="SIPO_node6.html">Architecture</A>
 <B> Previous:</B> <A
- HREF="SIPO_node6.html">In a Project</A>
- &nbsp; <B>  <A ID="tex2html62"
+ HREF="SIPO_node6.html">Architecture</A>
+ &nbsp; <B>  <A ID="tex2html60"
   HREF="SIPO_node1.html">Contents</A></B> 
 <BR>
 <BR></DIV>
 <!--End of Navigation Panel-->
 
-<H1><A ID="SECTION00030000000000000000">
-Architecture</A>
-</H1>
+<H2><A ID="SECTION00031000000000000000">
+Waveform</A>
+</H2>
 
 <P>
-This core is made to interface for serial to parallel data. On each enable pulse on a positive clock edge the input serial
-line will be sampled. The counter starts at 0 and the shift is complete once it hits BUS_WIDTH * 8. For a 32 bit word you will
-need 32 enable pulses. These will correspond to counter output 0 to 31. 32 will signal the shift is done and the parallel output
-data is valid. Once it is valid data can be read and load asserted. Load will reset the core and clear it for the next shift operation.
-All data is shifted in MSb to LSb or LSb to MSb. This is set with the rev input. When active high (1) the LSb to MSb method is used. When
-rev is set to 0 MSb to LSb is used.
-The only module is the sipo module. It is listed below.
+Below is a waveform in a typical application of the core for MSb to LSb. This shows the count up and how the enable is pulsed to increment it.
 
 <P>
-
-<UL>
-<LI><SPAN  CLASS="textbf">sipo</SPAN> Convert serial data to parallel by shifting in data on each enable pulse on a rising clock. (see core for documentation).
-</LI>
-</UL>
+<IMG
+ STYLE="height: 11.82ex; vertical-align: -0.12ex; " SRC="SIPO_img2.svg"
+ ALT="\includegraphics[width=\textwidth]{img/diagrams/waveform_rev0.png}">
 
 <P>
-Please see <A HREF="SIPO_node19.html#Module_Documentation"><IMG  ALT="[*]" SRC="crossref.png"></A> for more information.
+Next shows the core with rev set to 1 for LSb to MSb operation.
 
 <P>
-<BR><HR>
-<!--Table of Child-Links-->
-<A ID="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+<IMG
+ STYLE="height: 11.82ex; vertical-align: -0.12ex; " SRC="SIPO_img3.svg"
+ ALT="\includegraphics[width=\textwidth]{img/diagrams/waveform_rev1.png}">
 
-<UL CLASS="ChildLinks">
-<LI><A ID="tex2html63"
-  HREF="SIPO_node8.html">Waveform</A>
-</UL>
-<!--End of Table of Child-Links-->
+<P>
 <BR><HR>
 
 </BODY>

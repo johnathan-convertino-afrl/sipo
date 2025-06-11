@@ -43,8 +43,6 @@ The following are the dependencies of the cores.
   \item cocotb (simulation)
 \end{itemize}
 
-\input{src/fusesoc/depend_fusesoc_info.tex}
-
 \subsection{In a Project}
 \par
 This core is made to be used on the same clock domain as the input parallel data. The serial input rate is set by the enable.
@@ -65,7 +63,7 @@ Example:
 \begin{lstlisting}[language=bash]
   dep:
     depend:
-      - ">=AFRL:simple:sipo:1.0.0"
+      - ">=AFRL:simple:sipo:1.0.1"
 \end{lstlisting}
 
 Module instantiation:
@@ -79,6 +77,7 @@ Module instantiation:
       .rev(rev),
       .load(load),
       .pdata(pdata),
+      .reg_count_amount(0),
       .sdata(sdata),
       .dcount(dcount)
     );
@@ -177,7 +176,7 @@ The targets available are listed below.
 
 The targets above can be run with various parameters.
 \begin{lstlisting}[language=bash]
-  $ fusesoc run --target sim_cocotb AFRL:simple:sipo:1.0.0
+  $ fusesoc run --target sim_cocotb AFRL:simple:sipo:1.0.1
 \end{lstlisting}
 
 \newpage

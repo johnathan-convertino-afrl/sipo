@@ -3,7 +3,7 @@
 
 
 $key = q/Module_Documentation/;
-$external_labels{$key} = "$URL/" . q|SIPO_node19.html|; 
+$external_labels{$key} = "$URL/" . q|SIPO_node18.html|; 
 $noresave{$key} = "$nosave";
 
 1;

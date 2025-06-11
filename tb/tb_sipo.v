@@ -75,6 +75,7 @@ module tb_sipo ();
     .rev(1'b0),
     .load(tb_load),
     .pdata(tb_pdata),
+    .reg_count_amount(0),
     .sdata(tb_sdata[7]),
     .dcount(tb_dcount)
   );

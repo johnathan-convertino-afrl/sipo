@@ -89,6 +89,7 @@ module tb_cocotb #(
     .rev(rev),
     .load(load),
     .pdata(pdata),
+    .reg_count_amount(0),
     .sdata(sdata),
     .dcount(dcount)
   );

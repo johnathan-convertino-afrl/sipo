@@ -3,7 +3,7 @@
 <!--Converted with LaTeX2HTML 2024 (Released January 1, 2024) -->
 <HTML lang="en">
 <HEAD>
-<TITLE>fusesoc_info Depenecies</TITLE>
+<TITLE>In a Project</TITLE>
 
 <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
 <META NAME="viewport" CONTENT="width=device-width, initial-scale=1.0">
@@ -22,44 +22,107 @@
  HREF="SIPO_node6.html">
 <IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
 <A
- HREF="SIPO_node4.html">
+ HREF="SIPO_node2.html">
 <IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
 <A
  HREF="SIPO_node4.html">
 <IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
-<A ID="tex2html57"
+<A ID="tex2html54"
   HREF="SIPO_node1.html">
 <IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  
 <BR>
 <B> Next:</B> <A
- HREF="SIPO_node6.html">In a Project</A>
+ HREF="SIPO_node6.html">Architecture</A>
 <B> Up:</B> <A
- HREF="SIPO_node4.html">Dependencies</A>
+ HREF="SIPO_node2.html">Usage</A>
 <B> Previous:</B> <A
  HREF="SIPO_node4.html">Dependencies</A>
- &nbsp; <B>  <A ID="tex2html58"
+ &nbsp; <B>  <A ID="tex2html55"
   HREF="SIPO_node1.html">Contents</A></B> 
 <BR>
 <BR></DIV>
 <!--End of Navigation Panel-->
 
-<H3><A ID="SECTION00022100000000000000">
-fusesoc_info Depenecies</A>
-</H3>
-
-<UL>
-<LI>dep
-	
-<UL>
-<LI>AFRL:utility:helper:1.0.0
-	
-</LI>
-</UL>
-</LI>
-</UL>
+<H2><A ID="SECTION00023000000000000000">
+In a Project</A>
+</H2>
 
 <P>
-<BR><HR>
+This core is made to be used on the same clock domain as the input parallel data. The serial input rate is set by the enable.
+The enable should only be pulsed for one clock cycle. If the clock is the rate the enable should be tied high. Load has to be
+used to get the output data and reset the input count. The data count provers other cores a bit count to know what bit currently being
+input to the core. On load data is cleared from the input register and the count is reset to 0. Once enable is toggled the count
+will increment and indicates how many bits of the word are contained in the register. The register is full once the max number
+of bits is reached on the counter output. Direction of MSb first or LSb first is set by the rev input. This can be changed at anytime.
+
+<OL>
+<LI>Set ena to 1 at rising clock edge for one clock cycle
+</LI>
+<LI>Continue till the counter hits the number of bits needed.
+</LI>
+<LI>Read the parallel data output to capture data.
+</LI>
+<LI>Assert load to 1 to restart counter and clear parallel register.
+</LI>
+</OL>
+
+<P>
+Adding the core to a fusesoc project, outside of adding the verilog module to your code, requires it is added as dependency.
+Example:
+<TABLE FRAME="VOID" CELLPADDING="4"><TR><TD>
+<PRE>
+  dep:
+    depend:
+      - "&gt;=AFRL:simple:sipo:1.0.1"
+</PRE>
+</TD></TR></TABLE>
+
+<P>
+Module instantiation:
+<TABLE FRAME="VOID" CELLPADDING="4"><TR><TD>
+<PRE>
+    sipo #(
+      .BUS_WIDTH(4)
+    ) inst_sipo (
+      .clk(clk),
+      .rstn(rstn),
+      .ena(ena),
+      .rev(rev),
+      .load(load),
+      .pdata(pdata),
+      .reg_count_amount(0),
+      .sdata(sdata),
+      .dcount(dcount)
+    );
+</PRE>
+</TD></TR></TABLE>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A
+ HREF="SIPO_node6.html">
+<IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
+<A
+ HREF="SIPO_node2.html">
+<IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up.png"></A> 
+<A
+ HREF="SIPO_node4.html">
+<IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev.png"></A> 
+<A ID="tex2html54"
+  HREF="SIPO_node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A
+ HREF="SIPO_node6.html">Architecture</A>
+<B> Up:</B> <A
+ HREF="SIPO_node2.html">Usage</A>
+<B> Previous:</B> <A
+ HREF="SIPO_node4.html">Dependencies</A>
+ &nbsp; <B>  <A ID="tex2html55"
+  HREF="SIPO_node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
 
 </BODY>
 </HTML>
