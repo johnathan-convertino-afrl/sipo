@@ -88,7 +88,7 @@ module sipo #(
     // assign parallel data register to output.
     assign pdata = r_pdata;
 
-    assign s_count_amount = (reg_count_amount > BUS_WIDTH*8 : BUS_WIDTH*8 : (reg_count_amount == 0 ? BUS_WIDTH*8 : reg_count_amount));
+    assign s_count_amount = (reg_count_amount > BUS_WIDTH*8 ? BUS_WIDTH*8 : (reg_count_amount == 0 ? BUS_WIDTH*8 : reg_count_amount));
 
     // Positive edge data count that is incremented on enable pulse.
     always @(posedge clk)
