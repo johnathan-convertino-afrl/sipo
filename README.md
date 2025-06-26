@@ -1,5 +1,6 @@
 # SIPO
 ### Serial to Parallel data core
+---
 
 ![image](docs/manual/img/AFRL.png)
 
